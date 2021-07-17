@@ -1,3 +1,0 @@
-codeseg:
-	disp str "Hello World!:P"
-        endop

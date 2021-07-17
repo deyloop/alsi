@@ -1,0 +1,19 @@
+codeseg:
+	mov r i regA i 20
+        mov r i regB i 30
+        call display
+        endop
+
+func:
+        add r i regA r i regB
+        ret 
+
+display:
+        disp str "Sum of "
+        disp r i regA
+        disp str " and "
+        disp r i regB
+        disp str " is "
+        call func
+        disp r i regA
+        ret       
