@@ -1,6 +1,6 @@
 #include <iostream>
 #include "cpu.hpp"
-#include "opcodes.h"
+#include "opcodes.hpp"
 
 /******************************************************************************
 This function is called when the CPU is created and before calling execute.
@@ -53,17 +53,17 @@ void CPU::init_opcodes( ) {
 /*-----------------------------------------------------------------------------
 Reads in the code to be executed and executes each opcode in there.
 Parameters:
-[IN]	from_ip		-	the index of the instruction in the code from which 
-						execution starts.
+[IN]	from_ip - the index of the instruction in the code from which execution
+                  starts.
 
 EXPLAINED: 
-     The CPU must be provided with an array of opcodes previous to this.
-	 This array is a sequence of commands that the CPU executes one by one.
-	 For each opcode, it calls the corresponding function (stored in the array
-	 CPU::opcodes[256]) that is responsible for actually doing the task that the 
-	 command is supposed to do.
-	     ex: if opcodes[ip] == mov, then by array lookup, we call CPU::op_mov,
-		     which processes the parameters that follow.
+The CPU must be provided with an array of opcodes previous to this.
+This array is a sequence of commands that the CPU executes one by one.
+For each opcode, it calls the corresponding function (stored in the array
+CPU::opcodes[256]) that is responsible for actually doing the task that the 
+command is supposed to do.
+  ex: if opcodes[ip] == mov, then by array lookup, we call CPU::op_mov,
+      which processes the parameters that follow.
 -----------------------------------------------------------------------------*/
 void CPU::execute( unsigned from_ip ) {
   unsigned long inst_count = 0;
